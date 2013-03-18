@@ -1,2 +1,36 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+This application implements simple messaging API.
+
+This API allows:
+1) Create user
+2) Post message for user
+3) Follow another user
+4) Unfollow followed user
+5) Get feed ( list of all messages from all followed users sorted by date and limited by 20 )
+6) Get Global feed ( list of all messages from all users sorted by date and limited by 20 )
+
+
+Installation instruction.
+Install rails ( rubyonrails.org )
+get this application from https://github.com/benjaminharel/Twits
+run
+ $> rake:db:migrate
+ $> rails s
+
+
+
+HTTP API:
+POST CreateUser [UserName]
+POST PostMessage [UserId, MessageText]
+POST Follow [FollowingUser, FollowedUser]
+DELETE Unfollow [FollwingUser, UnfollowedUser]
+GET GetFeed [ForUserId]
+GET GetGlobalFeed
+
+Example: http://localhost:3000/GetFeed?ForUserId=5
+
+
+Tests are available under test directory.
+Migrations are available under db/migrate.
+
+
+Enjoy.
