@@ -1,0 +1,7 @@
+one:
+  user_id: <%= User.last.id %>
+  text: Message1
+
+two:
+  user_id: <%= User.first.id %>
+  text: Message2
