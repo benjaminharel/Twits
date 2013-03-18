@@ -5,7 +5,7 @@ class FollowUsersControllerTest < ActionController::TestCase
     @follow_user = follow_users(:one)
   end
 
-  test "should follow_user" do
+  test "should follow user" do
     assert_difference('FollowUser.count') do
       post :create, FollowedUser: @follow_user.follow_user_id, FollowingUser: @follow_user.user_id
     end
@@ -13,7 +13,7 @@ class FollowUsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should unfollow_user" do
+  test "should unfollow user" do
     assert_difference('FollowUser.count', -1) do
       delete :destroy, UnfollowedUser: @follow_user.follow_user_id, FollwingUser: @follow_user.user_id
     end
